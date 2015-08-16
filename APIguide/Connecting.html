@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> How To Use the Food2Fork API</title>
+  <link rel="stylesheet" href="stylesheet2.css" />
+</head>
+<body>
+
+  <!-- Header Image with Title and Gremlin Logo -->
+  <div class="header">
+    <img alt="mainPic" src="http://i57.tinypic.com/2yn19gl.jpg">
+  </div>
+  </br>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+
+  <!-- Navigation Keys -->
+  <div class="sidebar">
+    <ul id="menu">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Main.html">Introduction</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Basics.html">First Steps</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Connecting.html">Contacting the Server</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Searching.html">Search Basics</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Specifics.html">Specific Searches</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Displaying.html">Receiving Information</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Closing.html">Closing</a>
+    </ul>
+  </div>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+  </br>
+
+  <!-- Main body of text -->
+  <div class="main">
+  </br>
+  <h1>Contacting the Food2Fork Server</h1>
+  <p>
+
+    <!-- blurb about what's to come -->
+    <div class="highlights">
+      <p>
+       <h2>How do I let Food2Fork know I want data? Why does everything have dollar signs?</h2>
+      </p>
+    </div>
+      <p>
+        There are many methods available to contact the Food2Fork server. We will be focusing on connecting with PHP and cURL.
+      </p>
+      <p>
+        This section will:
+      <ol>
+        <li>Set up contact with the Food2Fork server
+        <li>Enable you to receive data from the Food2Fork API
+        <li>Explain what the code means in terms anyone can understand
+      </ol>
+      </p>
+    <div class="shortBars">
+     <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Expected Format for Tutorial -->    
+    <h2>What am I doing, again?</h2>
+      <p>
+        Remember back when we were covering the basics of what PHP is? PHP is a server side scripting language. Keeping that terminology in mind, it would make sense to use this language to make a request to a server.
+      </p>
+      <p>
+        In addition to PHP we will be using cURL, a tool that can be used within your PHP code to make calls to another server. It's simple, powerful, and effective.
+      </p>
+      <p>
+        You'll be tackling a small amount of PHP code to make a request to the Food2Fork server because you want data from that server. Specifically, you want that server to give you all those delicious recipes.
+      </p>
+      <p>
+        To learn more about cURL, please visit the PHP manual
+        <a href="http://php.net/manual/en/book.curl.php">here</a>.
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Parts of a cURL request -->
+    <h2>What will I be coding?</h2>
+      <p>
+        First, please know that you must be using your PHP file. So, if you have both an HTML file and a PHP file, please open your PHP file now.
+      </p>
+      <p>
+        The cURL library has many functions available, but we will be utilizing three main functions to make contact with the Food2Fork server:
+        <ol>
+          <li>curl_init: Initializes the curl session
+          <li>curl_opt: Set your options. Specifically, we will be setting the value to the Food2Fork URL we're requesting data from
+          <li>curl_exec : Executes the session
+        </ol>
+      </p>
+      <p>
+        We will be using two main "things" you should become familiar with : variables and functions.
+      </p>
+      <p>
+        In PHP, a variable has a dollar sign before it's name. That means that particular "thing" is something that will receive contents (or a value).</br>
+        For example: $varA has nothing in it. </br>
+        while $varB = 2 has the contents "2" within it.
+      </p>
+      <p>
+        The functions we will be using are in the format of a function name, followed by parenthesis. There may or  may not be anything within the parenthesis.</br>
+        For example: curl_init() is a function</br>
+        curl_setopt(stuff, stuff, stuff) is a function.
+      </p>
+      <p>
+        The functions perform tasks for us, making our life way easier! For instance, if there was a function out there called "product" which calculated the product of any two numbers being multiplied together, wouldn't it just be easier to type $answer = product(number1, number2)  and have the answer appear, rather than figuring out the code to make your very own calculator? Yep. And that's why we use them.
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Citation for connection code and explanation: Wolfred. Oregon State University, Web Development, Lecture "Working With Other Seervers." http://eecs.oregonstate.edu/ecampus-video/player/player.php?id=75 -->
+    <!-- The request -->
+    <h2>Okay, let's Code</h2>
+      <p>
+         In an appropriate location in your PHP file (for example, the beginning would be fine, as would within the body of an HTML shell, or at the very end of your HTML shell) set up your PHP section:
+        <div class="examples">
+          <img alt="shell" src="http://i57.tinypic.com/r8gltc.png" width="40%">
+        </div>
+      </p>
+      <p>
+        Next, set up your initialization function within the PHP section:
+        <div class="examples">
+          <img alt="init" src="http://i62.tinypic.com/xe0gop.png" width="40%">
+        </div>
+      <p/>
+      <p>
+        The next part has a bit more to it. The Food2Fork Api clearly states: <b>All search requests should be made to the base search API URL. http://food2fork.com/api/search</b>.
+      </p>
+      <p>
+        Simply putting that in will not work, however. Remember when you signed up and were provided with a key? That key is your ticket to the data at Food2Fork. You need to add that code to the URL, replacing the fake key provided with your own key:
+        <div class="examples">
+          <img alt="setOptKey" src="http://i58.tinypic.com/4qhpog.png" width="80%">
+        </div>
+      </p>
+      <p>
+        You could stop with the curl_setopt function there. I highly recommend you do not, however. What happens if the server needs to redirect you in order to get the data you're searcing for? I'll tell you what - you wont get it.
+      </p>
+      <p>
+        So, I highly recommend you add a layer of defense in. All you need to do is add two more curl_setopt functions to handle the problems that would occur if the server needed to redirect you.
+      <p>
+        The CURLOPT_FOLLOWLOCATION will help us handle any redirects that occur. </b>
+        The CURLOPT_RETURNTRANSFER will provide us with with a string (fancy computer speak, basically meaning "text") inside of "$curl", so we can pick that text apart in an organized fashion later on.
+      </p>
+        <div class="examples">
+          <img alt="transfer" src="http://i60.tinypic.com/xaue77.jpg" width="80%">
+        </div>
+      </p>
+      <p>
+        Now, we could finish off by executing here, but what would we be doing besides having established contact? Nothing. Blank search results don't really interest anyone. So, understand that you have now established contact, and are set up to receive data, and we will execute and receive data momentarily.
+      </p>
+      <p> First, we should handle a special case: What if you want only specific data, not just every recipe you can find? What if you're craving bacon, and just want recipes with tons and tons of bacon? Well, let's cover that little catch in our next session before we execute and receive all those yummy recipes!
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- End page navigation -->
+    <ul id="nav">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Basics.html">Prev: First Steps</a>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Searching.html">Next: Search Basics</a></li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <title> Assignment Three Part Two </title>
+  <script src="ajax.js"></script>
+</head>
+<body>
+  <div name="assignment" align="center">
+    <h1> Assignment Three: Part Two </h1>
+    <h3> Author: Tara Massey </h3>
+    <h3> Class: CS290 Web Development </h3>
+    <h3> Term: Spring Term </h3>
+    <br />
+  </div>
+  <div name="introduction">
+    <p>
+      Per Instructor's Assignment Sheet: This assignment demonstrates my ability to create a website that uses asynchronous calls to pull data from an online provider, and
+      allow users to save desired results in local storage
+    </p>
+    <p>Assignment Features :</p>
+    <p>1. Pagination - Retrieves multiple pages from GitHub for a search, up to amount specified by user</p>
+    <p>2. Filters the above results by language before delivering results</p>
+    <p>3. Instantly moves the Gist from search results to favorites section when selected, removing Gist from results</p>
+    <p>4. Instantly removes the Gist from the favorites section when remove is selected</p>
+    <p>
+      5. Provides results with a description that serves as a url, as well as displaying the URL seperately so the user can see they're different gists if they have the
+      same description
+    </p>
+    <p>6. Only allows between 1 and 5 pages to be selected, otherwise will not return results</p>
+    <p>7. If no languages are selected, all four languages will be treated as valid selections</p>
+  </div>
+  <div align="right">
+    <h4>Favorite Gists</h4>
+    <div name="favorites" id="favs"></div>
+  </div>
+  <div>
+    <br />
+    <p>You will be searching recent GitHub gists according to lanague.</p>
+    <p>You will need to select the number of pages to view, and the languages you wish to view.</p>
+  </div>
+  <div name="criteria" align="right">
+    <h4>Number of pages to view</h4>
+    <input type="text" id="choices" />
+  </div>
+  <div>
+    <br />
+    <form>
+      <fieldset>
+        <legend>Search Language Criteria</legend>
+        <p>
+          <input type="checkbox" id="python" />
+          <label>Python</label>
+        </p>
+        <p>
+          <input type="checkbox" id="json" />
+          <label>JSON</label>
+        </p>
+        <p>
+          <input type="checkbox" id="javascript" />
+          <label>JavaScript</label>
+        </p>
+        <p>
+          <input type="checkbox" id="sql" />
+          <label>SQL</label>
+        </p>
+        <input type="button" value="Search" onclick="startSearch()" />
+      </fieldset>
+    </form>
+  </div>
+  <div id="results"> </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> How To Use the Food2Fork API</title>
+  <link rel="stylesheet" href="stylesheet2.css" />
+</head>
+<body>
+
+  <!-- Header Image with Title and Gremlin Logo -->
+  <div class="header">
+    <img alt="mainPic" src="http://i57.tinypic.com/2yn19gl.jpg">
+  </div>
+  </br>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+
+  <!-- Navigation Keys -->
+  <div class="sidebar">
+    <ul id="menu">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Main.html">Introduction</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Basics.html">First Steps</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Connecting.html">Contacting the Server</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Searching.html">Search Basics</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Specifics.html">Specific Searches</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Displaying.html">Receiving Information</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Closing.html">Closing</a>
+    </ul>
+  </div>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+  </br>
+
+  <!-- Main body of text -->
+  <div class="main">
+  </br>
+  <h1>Specific User Search Criteria</h1>
+  <p>
+
+    <!-- blurb about what's to come -->
+    <div class="highlights">
+      <p>
+       <h2>Want the ability to search for a variety of things without changing code? Want different sorting options each time?</h2>
+      </p>
+    </div>
+      <p>
+        This section will <b>not</b> walk you through building a complete website to receive user information. This section will, however, cover:
+        <ol>
+          <li>What a basic form is
+          <li>How to turn the submitted search criteria into a usable request
+        </ol>
+      </p>
+    <div class="shortBars">
+     <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- The form -->    
+    <h2>How do I get the search results from the user?</h2>
+      <p>
+        This section assumes you have created at least a basic HTML page. On this page you will be creating a <b>form</b>. The form will need to have a few basic sections:
+        <ol>
+          <li>The form tag : Designating that we will be submitting information
+          <li>The action : The URL this form will submit to. This can be the same page you're typing in, if the HTML content is in your PHP file, or a seperate PHP page.
+          <li>The method of request : For a basic search, Food2Fork allows for either GET or POST methods
+          <li>The input type you want from the user : Text for the ingredient, so the user can type it in, and if you'd like to give the user the power to control the sort type, some method for selecting "trendingness" or "ranking."
+          <li>A submit button: To initiate sending your search criteria
+        </ol>
+      </p>
+      <p>
+        When completed, the form will look something like this:
+        <div class="examples">
+          <img alt="basicSearch" src="http://i57.tinypic.com/2qvbbbm.png" width="50%">
+        </div>
+      </p>
+      <p>
+        And the above code, with no formatting or stylesheets, will produce a page similiar to this:
+        <div class="examples">
+          <img alt="basicSearch" src="http://i57.tinypic.com/161gdjq.jpg" width="50%">
+        </div>
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- How to use the form data -->
+    <h2>I understand forms, but how do I use the search criteria from the forms?</h2>
+      <p>
+        Using the data from the forms is as easy as creating a variable. Once the variable is assigned whatever the search criteria was, the variable is plugged into the URL in place of "r" or "chicken."
+      </p>
+      <p>
+        To put the search criteria into a variable, we're going to go to your PHP file and into the PHP code section. We want to do the following in this section:
+        <ol>
+          <li>Check to see if the user has entered anything into the ingredient search
+          <li>Check to see if the user has entered any sorting preference
+          <li>If so, put the user's criteria into a variable or two.
+        </ol>
+      </p>
+      <p>
+        So, first we're going to use a function called "isset." If, and only if, the user has put something into the search box will the variable be assigned a value. After all, why assign a variable a value of nothing?
+        <div class="examples">
+          <img alt="isset" src="http://i60.tinypic.com/1sdqop.jpg" width="30%">
+        </div>
+      <p>
+        If the user has entered something in the search criteria being checked, we will assign the variable. The variable will be equal to the contents of the $_POST or $_GET request. Please note, to specify which search criteria you're "getting" information from, you will use the name you assigned to that input. 
+        <div class="examples">
+          <img alt="sortingvalue" src="http://i57.tinypic.com/10eimpk.jpg" width="30%">
+        </div>
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Citation for connection code: Wolfred. Oregon State University, Web Development, Lecture "Working With Other Seervers." http://eecs.oregonstate.edu/ecampus-video/player/player.php?id=75 -->
+    <!-- Making the request with the variable  -->
+    <h2>So, now I can use the variable instead of typing everything in?</h2>
+      <p>
+       You sure can! It's nothing that we haven't practiced up to this point. You've already made a variable that holds whatever the user wants to search for, and a variable for how the user wants to filter the results. We're just going to make one more variable to keep things simple, and that variable is for the URL.
+      </p>
+      <p>
+        Lets make a variable and call it, for giggles, apiURL. We're going to assign it the value that never changes (the Food2Fork API URL and our key), and then the value of our two user variables.
+      <div class="examples">
+          <img alt="apiURL" src="http://i60.tinypic.com/25qgg1s.png" width="90%">
+      </div>
+      </p>
+      <p>
+        Then, we can just use that super flexible, ever-changing URL in place of the one we've been typing in. This means we can now send different search criteria each time.
+      <div class="examples">
+          <img alt="apiURL" src="http://i61.tinypic.com/2rhlgnl.png" width="90%">
+      </div>
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Page number and count  -->
+    <h2>Anything else I need to send with my request?</h2>
+      <p>
+       There is one <b>optional</b> part of a search request. If you're feeling fancy, you can send a page number request. This way you can have access to more recipes at your fingertips, because you'll be searching more than just the beginning recipes each time.
+      </p>
+      <p>
+        To add a page to search, all you do is add in a "&page=numberHere" to the end of your request URL.
+      <div class="examples">
+          <img alt="apiPage" src="http://i59.tinypic.com/1y0ge8.png" width="90%">
+      </div>
+      </p>
+      <p>
+        Or, just like we practiced, you can get a page number from your user in your form, and use a variable in place of typing the number in, like so:
+      <div class="examples">
+          <img alt="apiPageNum" src="http://i62.tinypic.com/swwrxl.png" width="90%">
+      </div>
+      </p>
+      <p>
+        Now your search wont just search the beginning, it will search whichever page you tell it to.
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+     <!-- What can you do with that returned info  -->
+    <h2>Do I use the same request for the ingredient list?</h2>
+      <p>
+       The short answer is, "No."
+     </p>
+     <p>
+      Food2Fork has different requirements and asks for different information to be provided to the server for the ingredient list. The steps we take to make this request are, however, exactly the same as we just did, except for a few minor details:
+        <ol>
+          <li>The base URL has changed.
+          <li>The request must be a GET method, it cannot be a POST method.
+          <li>We aren't sending sort preferences or ingredients, we're sending an ID number that we can get from the previous, general request.
+        </ol>
+      </p>
+      <p>
+        So, we should give our users some way to enter the required id number for futher information on ingredients in the recipe. It could be anything from a "more info" button to a whole new form. For the sake of simplicity (and not overloading you with new methods), this tutorial will just throw in another search form. This form is exactly like the one you created before, the name of the input section and submit button are just different.
+      </p>
+      <p>
+        You must remember that the method used in this form is a <b>GET</b> method.
+      </p>
+      <div class="examples">
+          <img alt="apiURL" src="http://i61.tinypic.com/2m2xefc.png" width="50%">
+      </div>
+      </p>
+      <p>
+        Now, we just make a variable for the id number and URL, just like we did before. Then, we use the variable representing the URL in our request.
+      <p>
+        This time, however, you must make sure the base URL you're storing in your varible is changed to: <b> http://food2fork.com/api/get</b>.
+      <div class="examples">
+          <img alt="apiURL" src="http://i61.tinypic.com/2j4o704.png" width="50%">
+      </div>
+      </p>
+      <p>
+        Congrats! You can now ask for general recipes, and your users can ask for specific ingredient lists. So, let's go learn how to finish executing the request and display all this information to your user.
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- End page navigation -->
+    <ul id="nav">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Searching.html">Prev: Search Basics</a>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Displaying.html">Next: Receiving Information</a></li>
+    </ul>
+  </div>
+</body>
+</html>

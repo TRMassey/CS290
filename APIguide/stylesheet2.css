@@ -1,0 +1,135 @@
+﻿/* Sections of the page */
+div.header{
+    background-color: black;
+    float: center;
+    margin: auto;
+    text-align: center;
+}
+
+div.main{
+    background-color: white ;
+    text-align: left;
+    height: auto;
+    margin: auto;
+    width: 75%;
+    position: relative;
+    border: solid;
+    border-radius: 15px;
+    border-color: #E6C545;
+    border-width: 10px;
+    float: center;
+}
+
+
+div.highlights {
+    color: #4C779B;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14;
+}
+
+
+div.bars, div.shortBars {
+    margin: auto;
+    float: center;
+    text-align: center;
+}
+
+/* main page */
+body{ 
+    background-color: black;
+    color: black;
+    font-family: Verdana;
+    font-size: 80%;
+}
+
+
+/* lists */
+ol {
+    list-style-type: circle;
+    text-align: left;
+    margin: auto;
+}
+
+ol li{
+    padding: 0 0 0 30px;
+}
+
+
+/* navigation bar */
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    margin: 20px;
+}
+
+
+ul li {
+    display: inline;
+}
+
+ul li > a {
+    background-color: #4C779B;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: solid;
+    border-radius: 15px;
+    border-color: black;
+}
+
+ul li > a:hover {
+    background-color: #E6C545;
+}
+#nav > ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    margin: 20px;
+}
+
+
+/* headers */
+h1{
+    position: center;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bolder;
+    display: block;
+    margin: auto;
+    padding: 0px 0px 0px 15px;
+    color: #800000;
+}
+
+
+div.main > h2{
+    position: center;
+    text-align: left;
+    font-family: "Courier New", Courier, monospace;
+    display: block;
+    margin: auto;
+    padding: 0px 0px 0px 15px;
+    color: #4C779B;
+}
+
+h2{
+    position: center;
+    text-align: center;
+    font-weight: bolder;
+    font-family: "Courier New", Courier, monospace;
+    display: block;
+    margin: auto;
+    color: #4C779B;
+}
+
+/* general text */
+p {
+    padding: 5px 15px 5px 15px;
+}
+
+

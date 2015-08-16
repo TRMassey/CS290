@@ -1,0 +1,30 @@
+
+body{
+	background-color: #E6E6FA;
+}
+
+h1, h3{
+	text-align: center;
+	color: #CD5C5C;
+}
+
+legend{
+	color: #CD5C5C;
+	font-style: bold;
+}
+
+label{
+	color: #CD5C5C;
+}
+
+caption{
+	color: #CD5C5C;
+}
+
+table, th, td{
+	background-color: #D3D3D3;
+}
+
+th, td{
+	padding: 15px;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> How To Use the Food2Fork API</title>
+  <link rel="stylesheet" href="stylesheet2.css" />
+</head>
+<body>
+
+  <!-- Header Image with Title and Gremlin Logo -->
+  <div class="header">
+    <img alt="mainPic" src="http://i57.tinypic.com/2yn19gl.jpg">
+  </div>
+  </br>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+
+  <!-- Navigation Keys -->
+  <div class="sidebar">
+    <ul id="menu">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Main.html">Introduction</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Basics.html">First Steps</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Connecting.html">Contacting the Server</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Searching.html">Search Basics</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Specifics.html">Specific Searches</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Displaying.html">Receiving Information</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Closing.html">Closing</a></li>
+    </ul>
+  </div>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+  </br>
+
+  <!-- Main body of text -->
+  <div class="main">
+  </br>
+  <h1>Closing the Request</h1>
+  <p>
+
+    <!-- blurb about what's to come -->
+    <div class="highlights">
+      <p>
+       <h2>You've done it! Now I bet you want to close everything down, huh?</h2>
+      </p>
+    </div>
+      <p>
+        You've done the hard work already. Pat yourself on the back, and prepare for the easiest thing you'll learn today.
+      </p>
+    <div class="shortBars">
+     <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Closing the session -->    
+    <h2>What do I do?</h2>
+      <p> 
+        Every session you start needs to end. So, if you've used the "init" function (which we have), you better have a closing function. The closing function we will be using is the "curl_close" function.
+      </p>
+      <p>
+        Typically at the end of your PHP section, but definitely after your three previous request functions:
+        <ol>
+          <li>curl_init
+          <li>curl_opt
+          <li>curl_exec
+        </ol>
+      </p>
+      <p>
+        we will put in the "curl_close" function.
+      </p>
+      <p>
+        The "$curl" handle that you made when you started your request will be provided to the function like so:
+        <div class="examples">
+          <img alt="basicSearch" src="http://i59.tinypic.com/2lcmoi0.png" width="30%">
+        </div>
+      </p>
+      <p>
+        Now, you're done.
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Research Source: PHP Manual, cURL Functions, curl_close(). http://php.net/manual/en/function.curl-close.php -->
+    <!-- Closing the session -->    
+    <h2>That was easy. What did it do?</h2>
+      <p> 
+        The "curl_close($variable)" function does a few helpful things:
+        <ol>
+          <li> Obviously, it closes the cURL session you started.
+          <li> It frees all resources.
+          <li> That "$curl" handle you made? It's been deleted.
+        </ol>
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- What everything could look like -->
+    <h2>So I'm done? Will this work?</h2>
+      <p> 
+        As a little treat for finishing the tutorial, you can view the results of your labor here, demonstrating that if you follow these steps you can successfully use the Food2Fork API!
+      </p>
+      <p>
+        The attached websites use only HTML and PHP like we covered in this tutorial. The pages use the exact requesting methods, receiving methods, data display methods, and closing methods covered in this tutorial. No additional stylesheets are used for these webpages, so I leave that creative flare to you.
+      </p>
+      <p>
+        Search Box One: search for an ingredient and view results as text</br>
+        Search Box Two: search for a recipe by identification code and view results as text</br>
+        <a href="http://web.engr.oregonstate.edu/~masseyta/howTo/samplePage.php">Super Simple Page</a> 
+      </p>
+      <p>
+        Search Box One: search for an ingredient and view results with pictures and links</br>
+        Search Box Two: search for a recipe by identification code and view results as text</br>
+        <a href="http://web.engr.oregonstate.edu/~masseyta/howTo/samplePage2.php">Slightly More Fancy Page</a>
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- End page navigation -->
+    <ul id="nav">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Displaying.html">Prev: Receiving Information</a>
+    </ul>
+  </div>
+</body>
+</html>

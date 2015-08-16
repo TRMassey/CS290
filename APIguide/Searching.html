@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> How To Use the Food2Fork API</title>
+  <link rel="stylesheet" href="stylesheet2.css" />
+</head>
+<body>
+
+  <!-- Header Image with Title and Gremlin Logo -->
+  <div class="header">
+    <img alt="mainPic" src="http://i57.tinypic.com/2yn19gl.jpg">
+  </div>
+  </br>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+
+  <!-- Navigation Keys -->
+  <div class="sidebar">
+    <ul id="menu">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Main.html">Introduction</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Basics.html">First Steps</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Connecting.html">Contacting the Server</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Searching.html">Search Basics</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Specifics.html">Specific Searches</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Displaying.html">Receiving Information</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Closing.html">Closing</a>
+    </ul>
+  </div>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+  </br>
+
+  <!-- Main body of text -->
+  <div class="main">
+  </br>
+  <h1>All About Searching</h1>
+  <p>
+
+    <!-- blurb about what's to come -->
+    <div class="highlights">
+      <p>
+       <h2>Interested in how popular the recipe is? How about how tasty it's rated? What about eggplant only options!?</h2>
+      </p>
+    </div>
+      <p>
+        Before execution and asking for returned results, we need to tell Food2Fork what we want returned in our search. Food2Fork offers a few options:
+        <ol>
+          <li>No ingredients in the search, but give me some results based on how well a recipe is trending, or well it's rated.
+          <li>An ingredient in the search, and give me results based on how well it's trending or how well it's rated.
+          <li>An ingredient in the search, and I don't care how trending or yummy it is.
+          <li>Just give me everything.
+        </ol>
+      </p>
+      <p>
+        So, we have a lot to figure out! Let's show you your options.
+    <div class="shortBars">
+     <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Citation for connection code : Wolfred. Oregon State University, Web Development, Lecture "Working With Other Seervers." http://eecs.oregonstate.edu/ecampus-video/player/player.php?id=75 -->
+    <!-- Returning everything -->    
+    <h2>I don't want to sort, just give me all the results!</h2>
+      <p>
+        First thing first, let's start with asking for absolutely everything. This is the easiest thing to do, and your user doesn't have to enter any search criteria.
+      </p>
+      <p>
+        Starting with the previous PHP code you were working on, add one more line to make a request without any search criteria:
+        <div class="examples">
+          <img alt="basicSearch" src="http://i60.tinypic.com/214b235.jpg" width="80%">
+        </div>
+      </p>
+      <p>
+        This line of code does a few things, so let's break it down.
+      </p>
+      <p>
+        To start, let's begin at the left side. Do you see the dollar sign? If you remember from earlier, that means that result is a variable. It has a equals sign after it, so it is obviously being provided some contents.
+        <div class="examples">
+          <img alt="basicSearchL" src="http://i62.tinypic.com/17fhxk.jpg" width="80%">
+        </div>
+      </p>
+      <p>
+        The next bit of the code is the json_encode. This function makes sure the data we asked for is organized in such a way that we can access it, and give it to our users in a readable, usable way. Because of using json_encode, every bit of search data that we wanted from Food2Fork is now stored in the variable "result," and we can access whatever part of it we want.
+         <div class="examples">
+          <img alt="basicSearch" src="http://i59.tinypic.com/i50tc3.jpg" width="80%">
+        </div>
+      </p>
+      <p>
+        The remaining bit of the function is the execution, and you should remember it from the previous section. It takes the URL that we set in the curl_setopt step and passes it to the browser. Execution acheived -- We just asked Food2Fork for information.
+      <p>
+        So, if you trace the steps backwards : We ask Food2Fork for information, we break up the data they give us into an organized, usable text, and we store all that information in a variable so we can use it as much as we please.
+      <p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Sorting -->
+    <h2>I lied. I do want to sort it.</h2>
+      <p>
+        Food2Fork provides two sorting options: trendingness and rating. Both are requested in a very similiar manner, and if you refer to the basic search done above, it's really only one extra step!
+      </p>
+      <p>
+        If you look back at the curl_setopt function, you'll remember that we needed to add your key onto the end of the URL. We did this by adding a question mark, the word key, and then your secret key value.
+        <div class="examples">
+          <img alt="keyvalue" src="http://i60.tinypic.com/w0kjro.jpg" width="80%">
+        </div>
+      </p>
+      <p>
+        To sort, we do the exact same thing, except we're using a different symbol, and adding one more section to the end. So, after your key has been entered, you'll enter an ampersand and the word sort. Sort will either equal <b>"t" for trending</b> or <b>"r" for ratings</b>. This will tell Food2Fork how to sort your results.
+        <div class="examples">
+          <img alt="sortingvalue" src="http://i61.tinypic.com/fux5rl.jpg" width="80%">
+        </div>
+      </p>
+      <p>
+      It's worth noting that I've found that the ratings sort works perfectly, but sorting by trendingness has been buggy. Without an ingredient, it's pretty solid, but when mixed with an ingredient search it has returned empty results. So, if you're choosing to give your user the power to sort, you should keep in mind that you may want to reserve sorting by trendingness for general, non-specific searches.
+     </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </p>
+    </br>
+
+    <!-- Ingredients -->
+    <h2>Got it, now how is the ingredient search set up?</h2>
+     <p>
+      At the risk of sounding like a broken record, it's easy and exactly like what we've been doing above.
+    </p>
+    <p>
+      To receive results with no sorting, you'll simply add the search query after the key identification, just like you did to sort!</b>
+      So, ampersand, q for query, equals, and then the ingredient.
+    </p>
+    <p>
+      Or, to search for a specific ingredient with the sorting feature: ampersand, sort, equals, sorting type, ampersand, equals, ingredient.
+      <div class="examples">
+          <img alt="shell" src="http://i59.tinypic.com/izvwnc.jpg" width="80%">
+      </div>
+    </p>
+    <p>
+      It is worth noting that you can search for multiple ingredients, as long as they're seperated by a comma.
+    </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+    
+    <!-- Getting Search Criteria -->
+    <h2>Great, but how do I know what my user will want to search for?</h2>
+     <p>
+      You don't. So, in the next section, we will apply what we've learned about how search requests are made, and learn how to return results for whatever the user may ask for.
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- End page navigation -->
+    <ul id="nav">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Connecting.html">Prev: Contacting the Server</a>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Specifics.html">Next: Specific Searches</a></li>
+    </ul>
+  </div>
+</body>
+</html>

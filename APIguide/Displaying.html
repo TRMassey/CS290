@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> How To Use the Food2Fork API</title>
+  <link rel="stylesheet" href="stylesheet2.css" />
+</head>
+<body>
+
+  <!-- Header Image with Title and Gremlin Logo -->
+  <div class="header">
+    <img alt="mainPic" src="http://i57.tinypic.com/2yn19gl.jpg">
+  </div>
+  </br>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+
+  <!-- Navigation Keys -->
+  <div class="sidebar">
+    <ul id="menu">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Main.html">Introduction</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Basics.html">First Steps</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Connecting.html">Contacting the Server</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Searching.html">Search Basics</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Specifics.html">Specific Searches</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Displaying.html">Receiving Information</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Closing.html">Closing</a>
+    </ul>
+  </div>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+  </br>
+
+  <!-- Main body of text -->
+  <div class="main">
+  </br>
+  <h1>Receiving and Displaying Information</h1>
+  <p>
+
+    <!-- blurb about what's to come -->
+    <div class="highlights">
+      <p>
+       <h2>Want to show recipe names? Provide the recipe URL? Tell your users how highly it's ranked?</h2>
+      </p>
+    </div>
+      <p>
+        You can do all of those things and more! You just need to understand what information the Food2Fork API provides, and how you can access that information. Once accessed, there are many ways you can display it.
+      </p>
+    <div class="shortBars">
+     <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Response Parameters-->    
+    <h2>What information is hiding in the variable I made?</h2>
+      <p>
+        The main page for the Food2Fork API provides a list of response parameters. Though that may look or sound intimidating, it's actually just providing you with how the information is organized, and giving you the names to use to access the information.
+      </p>
+      <p>
+        Let us start by looking at the response parameters:
+        <!-- Image Source: Food2Fork. http://food2fork.com/about/api -->
+        <div class="examples">
+          <img alt="responseParam" src="http://i62.tinypic.com/2dwgoxy.jpg" width="50%">
+        </div>
+      </p>
+      <p>
+        This information basically demonstrates how you access the information.
+      </p>
+      <p>
+        First, you access the variable you made.</br>
+        Next, you access recipes, page number, or recipe count.</br>
+        Then, you have access to anything within recipes!</br>
+        <div class="examples">
+          <img alt="basicSearch" src="http://i59.tinypic.com/2rgzz46.png" width="80%">
+        </div>
+        <div class="examples">
+          <img alt="basicSearch2" src="http://i59.tinypic.com/a48l5h.jpg" width="80%">
+        </div>
+      </p>
+      <p>
+        The parts of the Food2Fork API search you can access and display are:
+        <ol>
+          <li><b>image_url</b>: This provides the URL to a tasty recipe picture. It can be displayed by itself, or as the source URL for an HTML image if you'd like to display the picture.
+          <li><b>source_url</b>: If you don't want the recipe to link to Food2Fork in any way, this is the link to use. It will direct the user to the original website the recipe was displayed on.
+          <li><b>f2f_url</b>: If you like consistency, however, all your recipes can link back to the Food2Fork site. This will display the recipe as shown on Food2Fork.
+          <li><b>title</b>: The name of the recipe.
+          <li><b>publisher</b>: Don't steal, it's bad. This will tell the audience where the delicious recipe first came from.
+          <li>publisher_url</b>: Instead of linking to the source url, this will simply link to the main website the recipe was originally posted on.
+          <li><b>social_rank</b>: Food2Fork has a social ranking algorithm they deploy, checking to see which recipe is most highly talked about. It will give you a number rating.
+          <li><b>page</b>: The page searched that the individual recipe was located at.
+          <li><b>recipe_id</b>: This is not listed on the parameter list, but it is available and useful! This will give us a unique identification code for a recipe, which we can then send in another request to gain access to the ingredient list. How to do this will be covered shortly.
+        </ol>
+      </p>
+      <p>
+        There is one important features you can access outside of "recipes", however. If you look at the above provided charts, you can also see that in line with "recipes" there is a parameter named "count." That means you wont have to access "recipes" first before getting this information:
+        <ol>
+          <li><b>count</b>: The total number of recipes your search will return.
+        </ol>
+      </p>
+     <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+      <!-- Response Parameters-->    
+    <h2>I kind of understand, but I need an example</h2>
+      <p>
+        If one was coding and wanted to display the top 10 recipe names, they would access the variable (results), then move to recipes. 
+      </p>
+      <p>
+        Since "recipes" can have more than a single recipe in it,  we'll use the variable "i" to represent the numbers 0 - 9. We will then make a loop, and and every after every loop we will make "i" get bigger by one number, so we can move to the next recipe.
+      </p>
+      <p>
+        Last, we'll ask for the title of that specific recipe.
+      </p>
+      <p>
+        The code within the PHP could look something like:
+        <div class="examples">
+          <img alt="justTitle" src="http://i61.tinypic.com/1179qfs.jpg" width="50%">
+        </div>
+      </p>
+      <p>
+        To access the other information, "title" would just be replaced by any other response parameter listed after "recipe."
+        <div class="examples">
+          <img alt="multi" src="http://i58.tinypic.com/352g2g4.jpg" width="50%">
+        </div>
+      </p>
+      <p>
+        Now you will be displaying the data you want from the API, based on the search results the user entered. For example, a single recipe may print out like this (please note, filter and ingredient are displayed in this example to increase your understanding, this is not required nor covered):
+        <div class="examples">
+          <img alt="multi" src="http://i58.tinypic.com/2chrli1.png" width="50%">
+        </div>
+     <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+      <!-- Response Parameters-->    
+    <h2>What about the ingredient list?</h2>
+      <p> 
+        Displaying the ingredient list is only slightly more complicated, because we don't know how many ingredients are in the list. Rest assured, however, that we can still manage. What's more, if you're feeling adventerous, you can apply this knowledge to the general search to return the maximum 30 results per page each time.
+      </p>
+      <p>
+        Let us start by looking at the parameters offered by Food2Fork:
+        <!-- Image Source: Food2Fork. http://food2fork.com/about/api -->
+        <div class="examples">
+          <img alt="responseParam" src="http://i57.tinypic.com/21muskm.png" width="60%">
+        </div>
+      </p>
+      <p> 
+        As illustrated in the below chart, much of the information is simply a repeat information that we already have. However, there is one additional, new piece of information we can get : ingredients! To gain access to the ingredient information, we will follow the flow chart, just as we did above:
+        <div class="examples">
+          <img alt="responseParam" src="http://i61.tinypic.com/i56fq8.png" width="80%">
+        </div>
+      </p>
+      <p>
+        Studying the flow chart, we can see that we are really just doing what we've already done, but with different names. </br>
+        First, you access the variable you made.</br>
+        Next, you access recipe.</br>
+        Then, you access the ingredients for that recipe
+      </p>
+      <p>
+        The only extra step we have to take is figuring out how many ingredients are stored in "ingredients," and we can do that easily with the PHP function "count."
+      </p>
+      <p>
+        We will make a variable, let's call it "size", and put the value the "count" function returns in count.
+      </p>
+      <p>
+        Then, just like with our previous loop, we will create a variable called "i", which will hold the value 0 through the max ingredient amount determined by count. After each loop, "i" will get bigger by one until it finally reaches the value of the variable "size." This ensures we print every ingredient in the list, even though we might not know how big that list is.
+      </p>
+        <div class="examples">
+          <img alt="basicSearch" src="http://i57.tinypic.com/8xn4m0.png" width="50%">
+        </div>
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- End page navigation -->
+    <ul id="nav">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Specifics.html">Prev: Specific Searches</a>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Closing.html">Next: Closing the Session</a>
+    </ul>
+  </div>
+</body>
+</html>

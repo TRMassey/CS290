@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> How To Use the Food2Fork API</title>
+  <link rel="stylesheet" href="stylesheet2.css" />
+</head>
+<body>
+
+  <!-- Header Image with Title and Gremlin Logo -->
+  <div class="header">
+    <img alt="mainPic" src="http://i57.tinypic.com/2yn19gl.jpg">
+  </div>
+  </br>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+
+  <!-- Navigation Keys -->
+  <div class="sidebar">
+    <ul id="menu">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Main.html">Introduction</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Basics.html">First Steps</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Connecting.html">Contacting the Server</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Searching.html">Search Basics</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Specifics.html">Specific Searches</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Displaying.html">Receiving Information</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Closing.html">Closing</a>
+    </ul>
+  </div>
+
+  <!-- Lines Surrounding the navigation keys -->
+  <div class="bars">
+    <img alt="lines" src="http://i58.tinypic.com/2hnz8er.png">
+  </div>
+  </br>
+
+  <!-- Main body of text -->
+  <div class="main">
+  </br>
+  <h1>First Steps</h1>
+  <p>
+
+    <!-- blurb about what's to come -->
+    <div class="highlights">
+      <p>
+       <h2>Not sure how to begin? Not sure if you can?</h2>
+      </p>
+    </div>
+      <p>
+        Relax. This section will cover the basics of the basics, ensuring that you don't get lost.
+      <p>
+        This section will not teach you how to code, or how to set up a basic HTML page. 
+      </p>
+      <p>
+        This section will:
+      <ol>
+        <li>Provide two options for basic webpage formats for use while following this guide
+        <li>Direct you to additional resources to fill in any gaps about website creation for your own research and use
+        <li>Direct you to the Food2Fork API
+        <li>Get you set up as a valid user with the Food2Fork API
+      </ol>
+      </p>
+    <div class="shortBars">
+     <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Expected Format for Tutorial -->    
+    <h2>My webpage needs what!?</h2>
+      <p>
+        There are many different ways to create a webpage. For the purposes of this guide, it will be assumed that you are using HTML and PHP.
+      </p>
+      <p>
+        HTML stands for HyperText Markup Language. It is simply a language used to create webpages.
+      </p>
+      <p>
+        PHP is a server-side scripting language. It allows us to do many things that straight HTML just can't do, and you can mix it right in with the HTML. 
+      </p>
+      <p>
+        Here's an example below:
+         <div class="examples">
+            <img alt="basicPHP" src="http://i59.tinypic.com/2rndimx.png" width="40%">
+        </div>
+      </p>
+      <p>
+        At least one of the files created will need to be a PHP file so we can receive information from the Food2Fork API. This will mean, for the purposes of following along in the tutorial, you will have one of two options:
+        <ol>
+          <li>A PHP file that will be set up to receive user input, then display the requested information on the same page.
+          <li>An HTML file that will be set up to receive user input, and a second PHP file that will receive the requested information from the API, and display the contents to the user.
+        </ol>
+      </p>
+      <p>
+        If you're an individual who is comfortable developing websites, and are currently rolling your eyes at the basic information above, that's fine! Please use the Food2Fork API guide to enhance your current website, and feel confident that your user experience will exceed the simple example provided at the end of this "How-to Guide."
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- HTML -->
+    <h2>At least one of those things scared me. Help.</h2>
+      <p>
+        Don't be scared. Just know you have a little bit of reading to do. There are many resources available on the web for free, but I will provide some suggetions that are easy to use, and easy to search.
+      </p>
+      <p>
+        To learn more about HTML, please go to:
+        <a href="http://www.w3schools.com/html/default.asp">W3schools</a>
+        They'll teach you all about using HTML, what everything means, give you examples, and let you try out features, all for free.
+      </p>
+      <p>
+        To learn more about PHP, please go to:
+        <a href="http://www.w3schools.com/php/default.asp">W3schools PHP</a>
+      </p>
+      <p>
+        If you aren't sure how to create a PHP file, I suggest using an IDE. An IDE is an "integrated development environment." What that means to you is that it's a program you'll type into that will help guide you and make the webpage development easier. You can do all sorts of cool things with it, but what those things are will vary with the IDE you pick. 
+      </p>
+      <p>
+        This author uses a wonderful and free IDE called Sublime, which I highly recommend:
+        <a href="http://www.sublimetext.com/">Learn about or Download Sublime</a>
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- Basics Entered -->
+    <h2>I'm ready, bring on the API information!</h2>
+      <p>
+        The first step in using the API is to visit the Food2Fork API site.
+      </p>
+      <p>
+        Please click <a href="http://food2fork.com/about/api">here</a> to visit the site now.
+      </p>
+      <p>
+        The website, provided there have been no overhauls since this guide was created, should look like this:
+        <div class="examples">
+          <img alt="mainSite" src="http://i61.tinypic.com/npnltv.png" width="50%">
+        </div>
+      </p>
+      <p>
+        To be able to receive data from the Food2Fork API, you will need to sign up. It's free.
+      <p/>
+      <p>
+        Please go click on the "sign up" button.
+        <div class="examples">
+          <img alt="mainSiteSignIn" src="http://i57.tinypic.com/vx2r05.jpg" width="50%">
+        </div>
+      </p>
+      <p>
+        Enter your information in the appropriate fields, and you will receive a message saying you are an API admin. Congrats! That means you now have an API Key that will give you access to the data at Food2Fork.
+        <div class="examples">
+          <img alt="key" src="http://i59.tinypic.com/2ccqdeg.png" width="50%">
+        </div>
+      </p>
+      <p>
+        Your API Key will be a series of letters and numbers. For the purposes of this tutorial, my key is kept secret. This key is important, and will be used shortly when we cover connecting your website to the API.
+      </p>
+      <p>
+        It's worth noting that you can click the "Upgrade Plan" button if you'd like the API to no longer be free. This action will allow more requests from your website for data from the Food2Fork API per day. Currently the free limit is set to 500 requests per day. Ultimately, it is up to you to decide if that's needed. For the purposes of this tutorial, we're staying free.
+      </p>
+    <div class="shortBars">
+      <img alt="lines" src="http://i58.tinypic.com/244r5e0.png" width="30%">
+    </div>
+    </br>
+
+    <!-- End page navigation -->
+    <ul id="nav">
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Main.html">Prev: Introduction</a></li>
+      <li><a href="http://web.engr.oregonstate.edu/~masseyta/howTo/Connecting.html">Next: Contacting the Server</a></li>
+    </ul>
+  </div>
+</body>
+</html>

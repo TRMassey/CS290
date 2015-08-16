@@ -1,0 +1,190 @@
+﻿
+table{
+    background-color: white;
+    border: solid;
+    border-width: 5px;
+    border-color: #5A008B;
+    color: #5A008B;
+}
+
+/* Sections of the page */
+div.header{
+    background-color: white;
+    float: center;
+    margin: auto;
+    text-align: center;
+}
+
+
+div.main{
+    background-color: #FFCCFF;
+    text-align: left;
+    height: auto;
+    margin: auto;
+    width: 75%;
+    position: relative;
+    border: solid;
+    border-radius: 15px;
+    border-color: #5A008B;
+    border-width: 10px;
+    float: center;
+}
+
+div.main > h2{
+    position: center;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    display: block;
+    margin: auto;
+    padding: 5px 5px 5px 5px;
+    color: #5A008B;
+}
+
+div.main > h3{
+    position: center;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    display: block;
+    margin: auto;
+    padding: 5px 5px 5px 5px;
+    color: #5A008B;
+}
+
+
+div.main > div{
+    position: center;
+    float: center;
+    margin: auto;
+    padding: 80px;
+}
+
+div.main > #output{
+    float: center;
+    font-weight: bold;
+    color: #5A008B;
+}
+
+
+div.video{
+    background-color: white;
+    color: #5A008B;
+    font-weight: bold;
+    text-align: left;
+    height: auto;
+    margin: auto;
+    width: 50%;
+    position: relative;
+    float: center;
+}
+
+div.formDec{
+    background-color: white;
+    color: #5A008B;
+    font-weight: bold;
+    text-align: center;
+    height: auto;
+    margin: auto;
+    width: 50%;
+    border: solid;
+    border-radius: 15px;
+    border-color: #5A008B;
+    border-width: 10px;
+    position: relative;
+    float: center;
+}
+
+div.formDec a{
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+}
+
+div.picImage img {
+    float: right;
+    position: relative;
+}
+/* navigation bar */
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    margin: 20px;
+}
+
+
+ul li {
+    display: inline;
+}
+
+ul li > a {
+    background-color: #FFCCFF;
+    color: #5A008B;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: solid;
+    border-radius: 15px;
+    border-color: #5A008B;
+}
+
+ul li > a:hover {
+    background-color: #DDA0DD;
+}
+
+
+/* headers */
+h1{
+    position: center;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bolder;
+    display: block;
+    margin: auto;
+    color: #5A008B;
+}
+
+h4{
+    position: center;
+    text-align: left;
+    color: #5A008B;
+    display: block;
+    margin: auto;
+    padding: 5px 5px 5px 5px;
+}
+
+h3{
+    position: center;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    display: block;
+    margin: auto;
+    padding: 5px 5px 5px 5px;
+    color: #5A008B;
+}
+h2{
+    position: center;
+    text-align: center;
+    font-weight: bolder;
+    font-family: "Courier New", Courier, monospace;
+    display: block;
+    margin: auto;
+    color: #5A008B;
+}
+
+label{
+        padding: 5px 15px 5px 30px;
+        font-size: 14;
+}
+
+input.button{
+    position: center;
+}
+
+
+/* general text */
+p {
+    padding: 5px 15px 5px 15px;
+}
